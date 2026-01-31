@@ -22,6 +22,7 @@ namespace GME1003GoblinDanceParty
         private List<Color> _randomStarColourList;
 
         private Texture2D _starSprite;  //the sprite image for our star
+        private Texture2D _backgroundTexture;
         private Random _rng;            //for all our random number needs
         
         //private Color _starColor;       //let's have fun with colour!!
@@ -109,6 +110,7 @@ namespace GME1003GoblinDanceParty
 
             //load out star sprite
             _starSprite = Content.Load<Texture2D>("starSprite");
+            _backgroundTexture = Content.Load<Texture2D>("NightClubBackground");
 
 
             //***This is for the goblin. Ignore it for now.
@@ -141,6 +143,7 @@ namespace GME1003GoblinDanceParty
 
             //it would be great to have a background image here! 
             //you could make that happen with a single Draw statement.
+            _spriteBatch.Draw(_backgroundTexture, new Rectangle(0, 0, GraphicsDevice.Viewport.Width, GraphicsDevice.Viewport.Height), Color.White);
 
             //this is where we draw the stars...
             for (int i = 0; i < _numStars; i++)
